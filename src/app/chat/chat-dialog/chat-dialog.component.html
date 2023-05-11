@@ -1,0 +1,30 @@
+
+<div class="footer">
+<div class="header">Assistant</div>
+
+  <div #scrollMe class="msg-scroll">
+    <ng-container *ngFor="let message of messages | async">
+      
+      <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot', 'to':   message.sentBy === 'user' }">
+        {{ message.content }}
+      </div>
+    
+      
+    </ng-container>
+    </div>
+  
+
+  
+  
+
+<div class="input-group" style="bottom: 0;">
+  <input [(ngModel)]="formValue" class="form-control" (keyup.enter)="sendMessage()" type="text">
+  <div class="input-group-append">
+    
+<button class="btn btn-outline-primary" type="button" (click)="sendMessage()">Send</button>
+  </div>
+</div>
+
+</div>
+
+
